@@ -3,7 +3,7 @@ class CreateLeagues < ActiveRecord::Migration[5.0]
     create_table :leagues do |t|
       t.string :code
       t.string :name
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps
     end
