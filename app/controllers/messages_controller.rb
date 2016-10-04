@@ -1,15 +1,21 @@
 class MessagesController < ApplicationController
 
+  before_action :get_contact, only: [:create]
 
   def create
     render json: { success: true }
-
-    text = params[:text]
-    name = params[:name]
-    src = params[:account]
-    event = params[:notification_type]
-    external_contact_id =  params[:external_contact_id]
-    account_type = params[:account_type]
-
+    process_text(params[:text])
   end
+
+  private
+    def get_contact
+      @contact = Contact.find_by(external_id: params[:external_contact_id], source: params[:account_type])
+      if !@contact && params[:notification_type] == 'MessageReceived'
+        @contact = Contact.create! external_id: params[:external_contact_id], source: params[:account_type], name: params[:name], state: 'new'
+        puts @contact
+      end
+    end
+
+    def process_text text
+    end
 end
