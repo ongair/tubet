@@ -5,6 +5,8 @@ Tubet is a Restful API providing access to sports betting odds in Kenya.
 
 ## Deploying to AWS Beanstalk
 
+How to deploy to Elastic Beanstalk
+
 ```
   # Setup the elastic beanstalk env
   eb init tubet -p Ruby -r eu-west-1
