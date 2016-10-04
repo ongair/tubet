@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'ongair_ruby', git: 'git://github.com/ongair/ongair-ruby.git'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/ongair/ongair-ruby.git
+  revision: 56d93874d58ab1cfcbc22ddb9862703c38bee4e8
+  specs:
+    ongair_ruby (0.0.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -129,6 +135,7 @@ DEPENDENCIES
   byebug
   listen (~> 3.0.5)
   mysql2
+  ongair_ruby!
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   spring
