@@ -8,7 +8,7 @@ gem 'mysql2'
 gem 'puma', '~> 3.0'
 gem 'aasm'
 gem 'httparty'
-gem 'ongair_ruby', git: 'https://github.com/ongair/ongair-ruby.git'
+gem 'ongair_ruby', github:'ongair/ongair-ruby'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
