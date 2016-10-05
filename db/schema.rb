@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20161004154357) do
     t.string   "source"
     t.string   "profile_pic_url"
     t.string   "external_id"
-    t.string   "state"
-    t.string   "level"
-    t.integer  "credits"
-    t.boolean  "terms_accepted"
-    t.boolean  "beta"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "state",           default: "new"
+    t.boolean  "active",          default: false
+    t.string   "level",           default: "0"
+    t.integer  "credits",         default: 0
+    t.boolean  "terms_accepted",  default: false
+    t.boolean  "beta",            default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "leagues", force: :cascade do |t|

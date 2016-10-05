@@ -7,11 +7,12 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.string :source
       t.string :profile_pic_url
       t.string :external_id
-      t.string :state
-      t.string :level
-      t.integer :credits
-      t.boolean :terms_accepted
-      t.boolean :beta
+      t.string :state, default: 'new'
+      t.boolean :active, default: false
+      t.string :level, default: '0'
+      t.integer :credits, default: 0
+      t.boolean :terms_accepted, default: false
+      t.boolean :beta, default: false
 
       t.timestamps
     end
