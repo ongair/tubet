@@ -10,6 +10,7 @@ class Notify
   def self.send_message contact, text, options=nil
     client = self.client(contact)
     response = client.send_message contact.external_id, text, options
+    Rails.logger.debug "Response: #{response}"
     return JSON.parse(response.body)['id']
   end
 

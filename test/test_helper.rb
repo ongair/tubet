@@ -2,8 +2,11 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
-require 'webmock/minitest'
-WebMock.disable_net_connect! if Rails.env.test?
+if Rails.env.test?
+  Rails.logger.debug "In test"
+  require 'webmock/minitest'
+  WebMock.disable_net_connect!
+end
 
 
 class ActiveSupport::TestCase

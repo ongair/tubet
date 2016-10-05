@@ -23,6 +23,9 @@ group :development, :test do
   gem 'byebug'
   gem 'annotate'
   gem 'sqlite3'
+end
+
+group :test do
   gem 'webmock'
 end
 
