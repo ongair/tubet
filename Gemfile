@@ -24,6 +24,7 @@ group :development, :test do
   gem 'annotate'
   gem 'sqlite3'
   gem 'mocha'
+  gem 'webmock'
 end
 
 group :development do

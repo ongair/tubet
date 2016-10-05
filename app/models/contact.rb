@@ -44,10 +44,16 @@ class Contact < ApplicationRecord
   end
 
   def send_terms_and_conditions
+    level = '0'
+    credits = 0
+
     messages = [
       I18n.t('welcome', name: self.name),
       I18n.t('disclaimer')
     ]
+
+    logger.debug "Sending terms and conditions to #{self.external_id}"
+    logger.debug messages
 
     options = "#{I18n.t('agree')},#{I18n.t('disagree')}"
     Notify.send_messages self, messages, options

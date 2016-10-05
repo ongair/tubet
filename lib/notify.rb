@@ -1,12 +1,9 @@
 class Notify
 
   def self.send_messages contact, texts, options=nil
-    client = self.client(contact)
     texts.each_with_index do |text,idx|
-
       options_sent = (idx == texts.length - 1) ? options : nil
-      client.send_message contact, text, options_sent
-      
+      self.send_message contact, text, options_sent
     end
   end
 

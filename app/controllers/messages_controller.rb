@@ -26,6 +26,8 @@ class MessagesController < ApplicationController
 
     def process_text text
       if @contact.new?
+        @contact.send_terms
+        @contact.save!
       end
     end
 end
