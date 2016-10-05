@@ -21,5 +21,7 @@
 
 en:
   me: Lyne
-  welcome: "Hi {name}, I'm %{me}.\r\nWelcome to TuBet, a fantasy betting game with real world odds."
-  disclaimer: "Before we continue, you need to accept our terms and conditions.\r\n\r\n 1. You are +18. \r\n 2. This is not a betting service. \r\n 3. Any odds or suggested winnings are not guaranteed.""
+  welcome: "Hi %{name}, I'm Lyne.\r\nWelcome to TuBet, a fantasy betting game with real world odds."
+  disclaimer: "Before we continue, you need to accept our terms and conditions.\r\n\r\n 1. You are +18. \r\n 2. This is not a betting service. \r\n 3. Any odds or suggested winnings are not guaranteed."
+  agree: "I agree"
+  disagree: "No"

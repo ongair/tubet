@@ -17,7 +17,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-
+# require 'lib/notify.rb'
 class Contact < ApplicationRecord
   include AASM
 
@@ -44,6 +44,20 @@ class Contact < ApplicationRecord
   end
 
   def send_terms_and_conditions
-    p 'About to send terms and conditions'
+    messages = [
+      I18n.t('welcome', name: self.name),
+      I18n.t('disclaimer')
+    ]
+
+    options = "#{I18n.t('agree')},#{I18n.t('disagree')}"
+    Notify.send_messages self, messages, options
+  end
+
+  def is_telegram?
+    source == 'Telegram'
+  end
+
+  def is_messenger?
+    source == 'MessengerV2'
   end
 end

@@ -22,3 +22,4 @@ beginner:
   name: Mike
   external_id: 1
   state: new
+  source: Telegram

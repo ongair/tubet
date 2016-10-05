@@ -23,6 +23,7 @@ group :development, :test do
   gem 'byebug'
   gem 'annotate'
   gem 'sqlite3'
+  gem 'mocha'
 end
 
 group :development do

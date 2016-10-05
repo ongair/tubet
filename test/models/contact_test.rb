@@ -33,6 +33,12 @@ class ContactTest < ActiveSupport::TestCase
     beginner = contacts(:beginner)
     assert beginner.new?
 
+    text = I18n.t 'welcome', name: beginner.name
+    disclaimer = I18n.t 'disclaimer'
+    options = "#{I18n.t('agree')},#{I18n.t('disagree')}"
+
+    Notify.expects(:send_messages).with(beginner,[text, disclaimer], options)
+
     beginner.send_terms
     assert_equal 'terms', beginner.state
   end
