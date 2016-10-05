@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/ongair/ongair-ruby.git
+  remote: https://github.com/ongair/ongair-ruby.git
   revision: b7883b681ecf68e498af532c7444ec41903c2756
   specs:
     ongair_ruby (0.0.11)
