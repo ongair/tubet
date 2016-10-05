@@ -37,7 +37,11 @@ class ContactTest < ActiveSupport::TestCase
     disclaimer = I18n.t 'disclaimer'
     options = "#{I18n.t('agree')},#{I18n.t('disagree')}"
 
-    Notify.expects(:send_messages).with(beginner,[text, disclaimer], options)
+    stub_request(:post, "https://ongair.im/api/v1/base/send")
+      .with(body: hash_including({ external_id: beginner.external_id }))
+      .to_return(:status => 200, body: { sent: true, id:2935 }.to_json, :headers => {})
+
+    # Notify.expects(:send_messages).with(beginner,[text, disclaimer], options)
 
     beginner.send_terms
     assert_equal 'terms', beginner.state
