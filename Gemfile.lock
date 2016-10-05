@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/ongair/ongair-ruby.git
-  revision: 56d93874d58ab1cfcbc22ddb9862703c38bee4e8
+  revision: b7883b681ecf68e498af532c7444ec41903c2756
   specs:
-    ongair_ruby (0.0.10)
+    ongair_ruby (0.0.11)
 
 GEM
   remote: https://rubygems.org/
