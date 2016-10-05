@@ -11,9 +11,17 @@ class MessagesController < ApplicationController
     def get_contact
       @contact = Contact.find_by(external_id: params[:external_contact_id], source: params[:account_type])
       if !@contact && params[:notification_type] == 'MessageReceived'
-        @contact = Contact.create! external_id: params[:external_contact_id], source: params[:account_type], name: params[:name], state: 'new'
-        puts @contact
+        @contact = Contact.create! external_id: params[:external_contact_id], source: params[:account_type], name: process_name(params[:name]), state: 'new'
       end
+    end
+
+    def process_name name
+
+      if params[:account_type] == "Telegram"
+        name.gsub!(/\(.*\)/, "")
+      end
+
+      return name
     end
 
     def process_text text

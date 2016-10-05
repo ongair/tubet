@@ -7,6 +7,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.11.1)
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
       nio4r (~> 1.2)
@@ -55,7 +56,11 @@ GEM
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    json (1.8.3)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -69,6 +74,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    multi_xml (0.5.5)
     mysql2 (0.4.4)
     nio4r (1.2.1)
     nokogiri (1.6.8)
@@ -131,8 +137,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   annotate
   byebug
+  httparty
   listen (~> 3.0.5)
   mysql2
   ongair_ruby!

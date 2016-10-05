@@ -18,24 +18,12 @@
 #  updated_at      :datetime         not null
 #
 
-class Contact < ApplicationRecord
-  include AASM
+require 'test_helper'
 
-  validates :external_id, presence: true
-  validates :source, presence: true
+class ContactTest < ActiveSupport::TestCase
 
-  aasm :column => :state do
-    state :new, initial: true, before_enter: :send_terms_and_conditions do
-      event :accept do
-        transitions :from => [:new], :to => :accepted
-      end
-    end
-
-    state :accepted do
-    end
+  test "Initial state" do
+    
   end
 
-  def send_terms_and_conditions
-    p 'About to send terms and conditions'
-  end
 end
