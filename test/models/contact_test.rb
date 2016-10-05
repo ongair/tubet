@@ -23,7 +23,18 @@ require 'test_helper'
 class ContactTest < ActiveSupport::TestCase
 
   test "Initial state" do
-    
+    player = Contact.new
+    assert_equal 'new', player.state
+    assert player.new?
+    assert player.may_send_terms?
+  end
+
+  test "Send terms and conditions" do
+    beginner = contacts(:beginner)
+    assert beginner.new?
+
+    beginner.send_terms
+    assert_equal 'terms', beginner.state
   end
 
 end

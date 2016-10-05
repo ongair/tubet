@@ -25,13 +25,21 @@ class Contact < ApplicationRecord
   validates :source, presence: true
 
   aasm :column => :state do
-    state :new, initial: true, before_enter: :send_terms_and_conditions do
+    state :new, initial: true do
       event :accept do
         transitions :from => [:new], :to => :accepted
       end
     end
 
+    state :terms, :before_enter => :send_terms_and_conditions do
+
+    end
+
     state :accepted do
+    end
+
+    event :send_terms do
+      transitions :from => :new, :to => :terms
     end
   end
 
